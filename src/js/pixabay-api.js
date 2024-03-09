@@ -9,7 +9,6 @@ export function fetchImages(searchQuery) {
     image_type: 'photo',
     orientation: 'horizontal',
     safesearch: true,
-    per_page: 15,
   });
 
   return fetch(`${BASE_URL}${END_POINT}?${params}`)
