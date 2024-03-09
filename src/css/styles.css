@@ -154,6 +154,8 @@ p {
 }
 /* #endregion */
 
+/* #region Loader */
+
 .loader {
   display: flex;
   justify-content: center;
@@ -197,3 +199,5 @@ p {
 .is-hidden {
   display: none;
 }
+
+/* #endregion */

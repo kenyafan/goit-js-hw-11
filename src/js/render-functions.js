@@ -1,5 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import iconBad from '../images/Error.svg';
 
 function createMarkup({
   webformatURL,
@@ -45,10 +46,22 @@ export function renderLoader(isLoading) {
   loader.classList.toggle('is-hidden', !isLoading);
 }
 
-export function renderError(message) {
-  iziToast.error({
-    title: 'Error',
-    message,
+export const renderError = message => {
+  const options = {
     position: 'topRight',
-  });
-}
+    iconUrl: iconBad,
+    timeout: 10000,
+    backgroundColor: '#ef4040',
+    progressBarColor: '#b51b1b',
+
+    title: 'Error',
+    titleColor: '#fafafb',
+    titleSize: '16px',
+    titleLineHeight: '1.5',
+
+    messageColor: '#fafafb',
+    messageSize: '16px',
+    messageLineHeight: '1.5',
+  };
+  iziToast.error({ ...options, message });
+};

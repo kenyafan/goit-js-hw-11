@@ -26,7 +26,7 @@ searchForm.addEventListener('submit', event => {
     .then(images => {
       if (images.length === 0) {
         renderError(
-          'Sorry, there are no images matching your search query. Please try again!'
+          'Sorry, there are no images matching <br> your search query. Please try again!'
         );
       } else {
         renderGallery(images);
