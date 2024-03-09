@@ -1,7 +1,8 @@
+const API_KEY = '42733452-f5a48a9f7be4f5b128e192710';
+const BASE_URL = 'https://pixabay.com';
+const END_POINT = '/api/';
+
 export function fetchImages(searchQuery) {
-  const API_KEY = '42733452-f5a48a9f7be4f5b128e192710';
-  const BASE_URL = 'https://pixabay.com';
-  const END_POINT = '/api/';
   const params = new URLSearchParams({
     key: API_KEY,
     q: searchQuery,
