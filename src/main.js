@@ -7,11 +7,17 @@ import {
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+
 const searchForm = document.querySelector('.form-search');
 const gallery = document.querySelector('.gallery');
 
 searchForm.addEventListener('submit', event => {
   event.preventDefault();
+  gallery.innerHTML = '';
 
   const searchQuery = event.currentTarget.elements.searchQuery.value.trim();
 
@@ -30,11 +36,6 @@ searchForm.addEventListener('submit', event => {
         );
       } else {
         renderGallery(images);
-
-        const lightbox = new SimpleLightbox('.gallery a', {
-          captionsData: 'alt',
-          captionDelay: 250,
-        });
 
         lightbox.refresh();
       }
